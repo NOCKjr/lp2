@@ -1,8 +1,8 @@
 from historico import Historico
 class Conta:
-    def __init__(self, numero, saldo, limite):
+    def __init__(self, numero, cliente, saldo, limite):
         self.numero = numero
-        self.clientes = []
+        self.titulo = cliente
         self.saldo = saldo
         self.limite = limite
         self.historico = Historico()
@@ -30,10 +30,5 @@ class Conta:
         else:
             return False
 
-    def listar_clientes(self):
-        print(f"clientes da conta {self.numero}:")
-        for cl in self.clientes:
-            print(f"{cl.cliente}")
-
     def __str__(self):
-        return (f'numero: {self.numero}')
+        return (f'numero: {self.numero} | titular: {self.titulo} | saldo: {self.saldo}')

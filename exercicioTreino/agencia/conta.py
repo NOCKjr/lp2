@@ -1,11 +1,11 @@
 from historico import Historico
 class Conta:
-    def __init__(self, numero, cliente, saldo, limite):
+    def __init__(self, numero, saldo, limite):
         self.numero = numero
-        self.titulo = cliente
         self.saldo = saldo
         self.limite = limite
         self.historico = Historico()
+        self.emprestimos = []
 
     def sacar(self, valor):
         if valor<=self.saldo:
@@ -24,11 +24,10 @@ class Conta:
     def transferir(self, destino, valor):
         if valor <= self.saldo:
             self.saldo -= valor
-            print(f"{self.titulo} transferiu {valor:.2f} R$ para {destino.titulo}.")
             self.historico.transacoes.append(f"Transferencia de {valor} para {destino}")
             destino.historico.transacoes.append(f'')
         else:
             return False
 
     def __str__(self):
-        return (f'numero: {self.numero} | titular: {self.titulo} | saldo: {self.saldo}')
+        return (f'numero: {self.numero} | saldo: {self.saldo}')
