@@ -1,4 +1,4 @@
-from exercicioTreino.agencia.conta import Conta
+from relacionamento.exercicioTreino.agencia.conta import Conta
 from cliente import Cliente
 
 cliente1 = Cliente("elias", "06064218231")
