@@ -1,9 +1,9 @@
 class Produto:
     _desconto = 0
     def __init__(self, nome, preco):
-        self.valida_preco(preco)
-        self._nome = nome
-        self._preco = preco
+        if self.valida_preco(preco):
+            self._nome = nome
+            self._preco = preco
 
     @classmethod
     def atualizar_desconto(cls, novo_desconto):
