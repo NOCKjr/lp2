@@ -4,8 +4,8 @@ from classe_abstrata.secretario import Secretario
 
 secretario = Secretario()
 diretor = Diretor()
-funcionario = Funcionario()
+#funcionario = Funcionario()
 
 secretario.bonificacao()
 diretor.bonificacao()
-funcionario.bonificacao()
+#funcionario.bonificacao()
